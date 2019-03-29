@@ -57,4 +57,12 @@ function _M.table_has_value(t, ele)
     return false
 end
 
+function _M.str_explode_one(str, pat)
+    local index = str:find(pat)
+    if index == nil then
+        return str, nil
+    end
+    return str:sub(1, index-1), str:sub(index+1, -1)
+end
+
 return _M
